@@ -3,17 +3,12 @@
  */
 package se1app.applicationcore;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 /**
  * @author Robert
@@ -26,15 +21,12 @@ public class Spiel {
     @GeneratedValue
     private Integer id;
     
-//	@OneToMany
-//	private Map<Spieler, RundenListe> allSpieler;
-	
-//	private List<Runde> allSpieler;
+	@OneToMany
+	private List<Teilnehmer> allSpieler;
 	
 	private String teamName;
 	
-//	@OneToOne
-	private Spielmodus modus = new Spielmodus();
+	private Spielmodustyp modus = new Spielmodustyp("Standard");
 	
 //	@OneToMany
 //	private List<Runde> runden;
@@ -44,7 +36,6 @@ public class Spiel {
 		 
 	}
 
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -53,7 +44,6 @@ public class Spiel {
 		result = prime * result + ((teamName == null) ? 0 : teamName.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -76,8 +66,5 @@ public class Spiel {
 			return false;
 		return true;
 	}
-	
-	
-	
 
 }
