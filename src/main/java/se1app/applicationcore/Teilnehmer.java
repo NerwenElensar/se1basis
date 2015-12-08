@@ -18,6 +18,11 @@ public class Teilnehmer {
 	public Teilnehmer(String name){
 		this.name = name;
 	}
+	
+	
+	public String getName(){
+		return name;
+	}
 
 	@Override
 	public int hashCode() {
