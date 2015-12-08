@@ -30,34 +30,77 @@ public class Spiel {
 	
 	private Spielmodustyp modus = new Spielmodustyp("Standard");
 	
-	// @OneToMany
-	// private List<Runde> runden;
+	@OneToMany
+	private List<Runde> runden;
 	
-	public Spiel() {}
-	public Spiel(String name, String spielmodus ) {
+	public Spiel() {
+	}
+	
+	/**
+	 * Constructor
+	 * @param name
+	 * @param spielmodus
+	 */
+	public Spiel(String name, String spielmodus) {
 		this.teamName = name;
 		modus = new Spielmodustyp(spielmodus);
 	}
 	
-	
-	public List<Teilnehmer> getAllSpieler(){
+	/**
+	 * TODO
+	 * @return
+	 */
+	public List<Teilnehmer> getAllSpieler() {
 		return allSpieler;
 	}
 	
-	public Spielmodustyp getSpielmodus(){
+	/**
+	 * TODO
+	 * @return
+	 */
+	public Spielmodustyp getSpielmodus() {
 		return modus;
 	}
 	
-	public String getTeamname(){
+	/**
+	 * TODO
+	 * @return
+	 */
+	public String getTeamname() {
 		return teamName;
 	}
 	
-	public void addTeilnehmer(Teilnehmer teilnehmer){
+	/**
+	 * TODO
+	 * @param teilnehmer
+	 */
+	public void addTeilnehmer(Teilnehmer teilnehmer) {
 		allSpieler.add(teilnehmer);
 	}
 	
-	public void removeTeilnehmer(Teilnehmer teilnehmer){
+	/**
+	 * TODO
+	 * @param teilnehmer
+	 */
+	public void removeTeilnehmer(Teilnehmer teilnehmer) {
 		allSpieler.remove(teilnehmer);
+	}
+	
+	/**
+	 * TODO
+	 */
+	public void addRunde() {
+		runden.add(new Runde());
+	}
+	
+	/**
+	 * TODO
+	 * @param count
+	 */
+	public void addRunde(int count) {
+		for(int i = 0; i < count; i++) {
+			this.addRunde();
+		}
 	}
 	
 	@Override
