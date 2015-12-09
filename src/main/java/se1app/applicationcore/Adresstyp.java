@@ -1,3 +1,8 @@
+/**
+ * SE1 Aufgabe 11
+ * @author Robert Scheffel, Jennifer Momsen
+ * @date 05.12.2015
+ */
 package se1app.applicationcore;
 
 import java.io.Serializable;

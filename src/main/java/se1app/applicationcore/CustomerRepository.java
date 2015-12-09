@@ -1,3 +1,4 @@
+
 package se1app.applicationcore;
 
 import org.springframework.data.jpa.repository.JpaRepository;

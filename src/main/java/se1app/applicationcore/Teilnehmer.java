@@ -1,8 +1,16 @@
+/**
+ * SE1 Aufgabe 11
+ * @author Robert Scheffel, Jennifer Momsen
+ * @date 05.12.2015
+ */
 package se1app.applicationcore;
+
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Teilnehmer {
@@ -12,6 +20,10 @@ public class Teilnehmer {
 	private Integer id;
 
 	private String name;
+	
+	@ManyToMany(mappedBy = "allSpieler")
+	List<Spiel> spiel;
+	
 	
 	public Teilnehmer(){}
 	

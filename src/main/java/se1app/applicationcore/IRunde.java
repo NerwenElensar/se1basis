@@ -1,7 +1,11 @@
 package se1app.applicationcore;
 
 import java.util.List;
-
+/**
+ * SE1 Aufgabe 11
+ * @author Robert Scheffel, Jennifer Momsen
+ * @date 05.12.2015
+ */
 public interface IRunde {
 	
 		/** entfernt einen Wurf aus der Rundenliste 
@@ -20,5 +24,18 @@ public interface IRunde {
 	 * @return
 	 */
 	public Wurf getWurf(int i);
+	
+	
+	/**
+	 * Fügt einen Wurf zur Wurfliste hinzu
+	 */
+	public void addWurf();
+	
+	
+	/**
+	 * Fügt eine Anzahl an Würfen zur Wurfliste hinzu
+	 * @param count
+	 */
+	public void addWurf(int count);
 
 }

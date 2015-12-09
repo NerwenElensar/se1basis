@@ -1,5 +1,7 @@
 /**
- * 
+ * SE1 Aufgabe 11
+ * @author Robert Scheffel, Jennifer Momsen
+ * @date 05.12.2015
  */
 package se1app.applicationcore;
 
@@ -10,6 +12,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
@@ -23,7 +26,7 @@ public class Spiel {
 	@GeneratedValue
 	private Integer id;
 	
-	@OneToMany
+	@ManyToMany
 	private List<Teilnehmer> allSpieler = new ArrayList<>();;
 	
 	private String teamName;
