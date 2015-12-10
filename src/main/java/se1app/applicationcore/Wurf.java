@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.hql.internal.ast.tree.ImpliedFromElement;
+
 @Entity
 public class Wurf implements IWurf{
 	

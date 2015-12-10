@@ -11,7 +11,7 @@ public class SpielTest {
 
 	@Before
 	public void setUp() throws Exception {
-		spiel = new Spiel("KlassenTreff", "normal");
+		spiel = new Spiel("Spiel Eins","KlassenTreff", "normal");
 	}
 
 	@Test

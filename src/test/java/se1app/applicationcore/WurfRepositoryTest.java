@@ -12,38 +12,38 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 @ContextConfiguration(classes = Application.class)
-public class RundeRepositoryTest {
+public class WurfRepositoryTest {
 	
 	@Autowired
-	private RundeRepository rundeRepository;
-	
+	private WurfRepository wurfRepository;
 	
 	@Before
 	public void setUp() throws Exception {
-	Runde runde1 = new Runde();
-	runde1.addWurf(5);
-	rundeRepository.save(runde1);
-	
-	Runde runde2 = new Runde();
-	runde2.addWurf(25);
-	rundeRepository.save(runde2);
-	
-	Runde runde3 = new Runde();
-	runde3.addWurf(15);
-	rundeRepository.save(runde3);
-	
-	
+		
+		for(int i = 0; i< 20; i++){
+			wurfRepository.save(new Wurf(1 +i));
+		}
+		
 	}
 	
 	@Test
 	public void testFindAll() {
-		List<Runde> runde = rundeRepository.findAll();
-		assertEquals(3, runde.size());
+		List<Wurf> wuerfe = wurfRepository.findAll();
+		assertEquals(20, wuerfe.size());
+		
 	}
 	
-
+	@Test
+	public void testWurfValue(){
+		List<Wurf> wuerfe = wurfRepository.findAll();
+		assertEquals(1, wuerfe.get(0).getPunkte());
+		assertEquals(10, wuerfe.get(9).getPunkte());
+		assertEquals(15, wuerfe.get(14).getPunkte());
+		assertEquals(20, wuerfe.get(19).getPunkte());
+	}
 	
 }

@@ -23,7 +23,7 @@ public class Runde implements IRunde {
     @OneToMany
     private List<Wurf> wuerfe = new ArrayList<>();
     
-    private String name;
+
 	
 	
     /**
@@ -31,17 +31,7 @@ public class Runde implements IRunde {
      */
     public Runde(){}
     
-    /**
-     * Constructor
-     * @param name
-     */
-    public Runde(String name){
-    	this.name = name;
-    }
-    
-    public String getName(){
-    	return name;
-    }
+
 
 	@Override
 	public void loescheWurf(Wurf wurf) {
@@ -71,14 +61,17 @@ public class Runde implements IRunde {
 		}
 	}
 
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((wuerfe == null) ? 0 : wuerfe.hashCode());
 		return result;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -89,12 +82,6 @@ public class Runde implements IRunde {
 		if(getClass() != obj.getClass())
 			return false;
 		Runde other = (Runde) obj;
-		if(name == null) {
-			if(other.name != null)
-				return false;
-		}
-		else if(!name.equals(other.name))
-			return false;
 		if(wuerfe == null) {
 			if(other.wuerfe != null)
 				return false;
@@ -103,5 +90,7 @@ public class Runde implements IRunde {
 			return false;
 		return true;
 	}
+
+
 
 }

@@ -22,12 +22,12 @@ public class SpielRepositoryTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		Spiel spiel = new Spiel("HeimSpiel", "normal");
+		Spiel spiel = new Spiel("Spiel Eins","HeimSpiel", "normal");
 		spiel.addTeilnehmer(new Teilnehmer("Luke"));
 		spiel.addTeilnehmer(new Teilnehmer("Lea"));
 		spielRepository.save(spiel);
 		
-		Spiel spiel2 = new Spiel("GastSpiel", "normal");
+		Spiel spiel2 = new Spiel("Spiel Zwei","GastSpiel", "normal");
 		spiel2.addTeilnehmer(new Teilnehmer("Darth Vader"));
 		spiel2.addTeilnehmer(new Teilnehmer("Imperator"));
 		spielRepository.save(spiel2);
@@ -42,13 +42,19 @@ public class SpielRepositoryTest {
 	}
 	
 	@Test
-	public void testFindByName(){
+	public void testFindByTeamname(){
 		Spiel spiel = spielRepository.findByteamName("HeimSpiel");
 		assertEquals("HeimSpiel", spiel.getTeamname());
 		assertTrue(spiel.getAllSpieler().contains(new Teilnehmer("Luke")));
 		spiel.getAllSpieler().remove(new Teilnehmer("Luke"));
 		assertFalse(spiel.getAllSpieler().contains(new Teilnehmer("Luke")));
 		assertFalse(spiel.getAllSpieler().contains(new Teilnehmer("Imperator")));
+	}
+	
+	@Test
+	public void testFindBySpielBez(){
+		Spiel spiel = spielRepository.findBySpielBez("Spiel Zwei");
+		assertTrue(spiel.getAllSpieler().contains(new Teilnehmer("Imperator")));
 	}
 	
 	@Test
