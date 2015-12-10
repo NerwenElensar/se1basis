@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SpielRepository extends JpaRepository<Spiel, Integer> {
+	
 	public Spiel findByteamName(String teamName);
+	
+	public Spiel findBySpielBez(String spielBez);
 	
 }

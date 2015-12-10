@@ -31,6 +31,8 @@ public class Spiel {
 	
 	private String teamName;
 	
+	private String spielBez;
+	
 	private Spielmodustyp modus = new Spielmodustyp("Standard");
 	
 	@OneToMany
@@ -41,11 +43,12 @@ public class Spiel {
 	
 	/**
 	 * Constructor
-	 * @param name
+	 * @param teamName
 	 * @param spielmodus
 	 */
-	public Spiel(String name, String spielmodus) {
-		this.teamName = name;
+	public Spiel(String spielBez, String teamName, String spielmodus) {
+		this.teamName = teamName;
+		this.spielBez = spielBez;
 		modus = new Spielmodustyp(spielmodus);
 	}
 	
@@ -63,6 +66,24 @@ public class Spiel {
 	 */
 	public Spielmodustyp getSpielmodus() {
 		return modus;
+	}
+	
+	/**
+	 * TODO
+	 * @return
+	 */
+	public String getSpielBezeichnung(){
+		return spielBez;
+	}
+	
+	public Teilnehmer getTeilnehmer(String name){
+			for(Teilnehmer t : allSpieler){
+				if(t.getName().equals(name)){
+					return t;
+				}
+			}
+		
+		return null;
 	}
 	
 	/**

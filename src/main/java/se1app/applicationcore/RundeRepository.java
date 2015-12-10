@@ -12,6 +12,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RundeRepository extends JpaRepository<Runde, Integer> {
 	
-	public Runde findByName(String name);
-
+	
 }
