@@ -24,7 +24,6 @@ public class Teilnehmer {
 	@ManyToMany(mappedBy = "allSpieler")
 	List<Spiel> spiel;
 	
-	
 	public Teilnehmer(){}
 	
 	public Teilnehmer(String name){
