@@ -28,6 +28,8 @@ public class AppUseCases {
 		runde.getWuerfe().add(new Wurf(punkte));
 		spielPunkte.put(spieler, runde);
 		
+		spielRepository.findBySpielBez(spielBez).getRunden().get(rundenIndex).addWurf(punkte);
+		
 	}
 	
 	public Map<Teilnehmer,Runde> getSpielPunkte(){

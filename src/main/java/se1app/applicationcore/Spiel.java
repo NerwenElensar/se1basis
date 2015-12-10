@@ -127,6 +127,14 @@ public class Spiel {
 		}
 	}
 	
+	/**
+	 * TODO
+	 * @return
+	 */
+	public List<Runde> getRunden(){
+		return runden;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
