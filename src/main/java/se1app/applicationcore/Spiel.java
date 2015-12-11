@@ -49,6 +49,7 @@ public class Spiel {
 	public Spiel(String spielBez, String teamName, String spielmodus) {
 		this.teamName = teamName;
 		this.spielBez = spielBez;
+		runden = new ArrayList<>();
 		modus = new Spielmodustyp(spielmodus);
 	}
 	
@@ -133,6 +134,14 @@ public class Spiel {
 	 */
 	public List<Runde> getRunden(){
 		return runden;
+	}
+	
+	/**
+	 * @param index
+	 * @return
+	 */
+	public Runde getRunde(int index){
+		return runden.get(index);
 	}
 	
 	@Override

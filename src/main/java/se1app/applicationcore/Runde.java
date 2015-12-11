@@ -53,9 +53,14 @@ public class Runde implements IRunde {
 	public void addWurf() {
 		wuerfe.add(new Wurf());
 	}
+	
+	@Override
+	public void addWurf(int punkte){
+		wuerfe.add(new Wurf(punkte));
+	}
 
 	@Override
-	public void addWurf(int count) {
+	public void addWuerfe(int count) {
 		for(int i = 0; i < count ; i++){
 			this.addWurf();
 		}

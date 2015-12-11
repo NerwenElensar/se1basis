@@ -31,11 +31,17 @@ public interface IRunde {
 	 */
 	public void addWurf();
 	
+	/**
+	 * Fuegt einen Wurf mit Punkten hinzu
+	 * @param punkte
+	 */
+	public void addWurf(int punkte);
+	
 	
 	/**
 	 * Fügt eine Anzahl an Würfen zur Wurfliste hinzu
 	 * @param count
 	 */
-	public void addWurf(int count);
+	public void addWuerfe(int count);
 
 }

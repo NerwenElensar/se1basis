@@ -30,10 +30,12 @@ public class Event {
 	
 	public Event(Date date){
 		datum = date;
+		kegelbahnen = new ArrayList<>();
+		teilnehmer = new ArrayList<>();
 	}
 	
 	public void teilnehmerHinzufuegen(List<Teilnehmer> teilnehmer){
-		this.teilnehmer = teilnehmer;
+		this.teilnehmer.addAll(teilnehmer);
 	}
 	
 	public void teilnehmerHinzufuegen(Teilnehmer spieler){
@@ -45,6 +47,9 @@ public class Event {
 		this.teilnehmer.remove(spieler);
 	} 
 	
+	public List<Teilnehmer> getEventTeilnehmer(){
+		return teilnehmer;
+	}
 	
 
 	@Override
