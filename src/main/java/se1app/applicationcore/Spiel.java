@@ -54,7 +54,7 @@ public class Spiel {
 	}
 	
 	/**
-	 * TODO
+	 * Liefert die Liste aller Teilnehmer
 	 * @return
 	 */
 	public List<Teilnehmer> getAllSpieler() {
@@ -62,7 +62,7 @@ public class Spiel {
 	}
 	
 	/**
-	 * TODO
+	 * Liefert den Spielmodus
 	 * @return
 	 */
 	public Spielmodustyp getSpielmodus() {
@@ -70,13 +70,18 @@ public class Spiel {
 	}
 	
 	/**
-	 * TODO
+	 * Liefert die Spielbezeichnung
 	 * @return
 	 */
 	public String getSpielBezeichnung(){
 		return spielBez;
 	}
 	
+	/**
+	 * Liefert einen Bestimmten Teilnehmer
+	 * @param name
+	 * @return Teilnehmer
+	 */
 	public Teilnehmer getTeilnehmer(String name){
 			for(Teilnehmer t : allSpieler){
 				if(t.getName().equals(name)){
@@ -88,7 +93,7 @@ public class Spiel {
 	}
 	
 	/**
-	 * TODO
+	 * Liefert den Teamnamen
 	 * @return
 	 */
 	public String getTeamname() {
@@ -96,7 +101,7 @@ public class Spiel {
 	}
 	
 	/**
-	 * TODO
+	 * Fügt einen Teilnehmer zur Teilnehmerliste hinzu
 	 * @param teilnehmer
 	 */
 	public void addTeilnehmer(Teilnehmer teilnehmer) {
@@ -104,7 +109,7 @@ public class Spiel {
 	}
 	
 	/**
-	 * TODO
+	 * Entfernt einen Teilnehmer aus der Teilnehmerliste 
 	 * @param teilnehmer
 	 */
 	public void removeTeilnehmer(Teilnehmer teilnehmer) {
@@ -112,24 +117,25 @@ public class Spiel {
 	}
 	
 	/**
-	 * TODO
+	 * Fügt eine Runde zum Spiel hinzu
 	 */
 	public void addRunde() {
 		runden.add(new Runde());
 	}
 	
 	/**
-	 * TODO
+	 * Fügt mehrere Runden zum Spiel hinzu
 	 * @param count
 	 */
 	public void addRunde(int count) {
+		count = Math.abs(count);
 		for(int i = 0; i < count; i++) {
 			this.addRunde();
 		}
 	}
 	
 	/**
-	 * TODO
+	 * Liefert die Liste aller Runden
 	 * @return
 	 */
 	public List<Runde> getRunden(){
@@ -137,8 +143,9 @@ public class Spiel {
 	}
 	
 	/**
+	 * Liefert eine bestimte Runde
 	 * @param index
-	 * @return
+	 * @return Runde
 	 */
 	public Runde getRunde(int index){
 		return runden.get(index);

@@ -37,4 +37,10 @@ public class SpielTest {
 		assertFalse(spiel.getAllSpieler().contains(teilnehmer));
 		
 	}
+	
+	@Test
+	public void testRundenHinzufuegen(){
+		spiel.addRunde(-10);
+		assertEquals(10, spiel.getRunden().size());
+	}
 }
